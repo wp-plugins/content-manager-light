@@ -16,7 +16,11 @@ Build your custom page layout and fill it with ready to use shortcodes/content. 
 
 Build custom page layouts. Create as many rows and columns as you need.
 
-**shortcodes/Content**
+**Demo site and Online documentation**
+
+See [Demo site](http://otwthemes.com/demos/1ts/?item=Content%20Manager%20Light&utm_source=wp.org&utm_medium=page&utm_content=demo&utm_campaign=cml) and [Online documentation](http://otwthemes.com/online-documentation-content-manager-light-wordpress-plugin/?utm_source=wp.org&utm_medium=page&utm_content=docs&utm_campaign=cml) for more info on this plugin.
+
+**Shortcodes/Content**
 
 Insert any of the ready to use shortcodes to fill in content in your columns. All settings are done in a nice and easy interface. Here is the list of shortcodes:
 
@@ -28,7 +32,7 @@ Insert any of the ready to use shortcodes to fill in content in your columns. Al
 * Ordered Lists
 * Tabs
 * Toggles
-* Dividers -> Horizontal rule
+* Dividers (Horizontal rules)
 * HTML editor
 
 **Custom styling and skins**
@@ -38,16 +42,11 @@ Most of the styles for the shortcodes will be inherited from your theme. Some wi
 **Full version**
 
 A full version of the plugin with tons of more options and shortcodes, front-end editor, custom shortcodes builder and more is on its way. Stay tuned!
- 
+
 Follow on [Twitter](http://twitter.com/OTWthemes) |
 [Facebook](http://www.facebook.com/pages/OTWthemes/250294028325665) |
 [YouTube](http://www.youtube.com/OTWthemes) |
 [Google +](https://plus.google.com/117222060323479158835/about)
-
-**Demo site and Online documentation**
-
-See [Demo site](http://otwthemes.com/demos/1ts/?item=Content%20Manager%20Light&utm_source=wp.org&utm_medium=page&utm_content=demo&utm_campaign=cml) and [Online documentation](http://otwthemes.com/online-documentation-content-manager-light-wordpress-plugin/?utm_source=wp.org&utm_medium=page&utm_content=docs&utm_campaign=cml) for more info on this plugin.
-
 
 == Installation ==
 
