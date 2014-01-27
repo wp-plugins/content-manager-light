@@ -1,0 +1,3 @@
+<div class="form-field">
+	<p><?php _e( '<p>See <a href="http://otwthemes.com/demos/1ts/?item=Content%20Manager%20Light&utm_source=wp.org&amp;utm_medium=admin&amp;utm_content=demo&amp;utm_campaign=cml">Demo site</a> and <a href="http://otwthemes.com/online-documentation-content-manager-light-wordpress-plugin/?utm_source=wp.org&amp;utm_medium=admin&amp;utm_content=docs&amp;utm_campaign=cml">Online documentation</a> for more info on this plugin.</p><p>Check out the <a href="http://otwthemes.com/product/sidebar-widget-manager-for-wordpress/?utm_source=wp.org&amp;utm_medium=admin&amp;utm_content=otherp&amp;utm_campaign=cml">Sidebar and Widget Manager</a>.</p>', 'otw_lcm' );?></p>
+</div>
