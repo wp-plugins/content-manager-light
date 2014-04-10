@@ -86,12 +86,14 @@ otw_grid_manager_object.prototype.load_from_json = function( json_code ){
 			
 			var column_id = 0;
 			
-			for( cC = 0; cC < json_object[ json_row ].columns.length; cC++ ){
-				column_id = this.add_column( row_id, json_object[ json_row ].columns[ cC ].rows, json_object[ json_row ].columns[ cC ].from_rows, json_object[ json_row ].columns[ cC ].mobile_rows, json_object[ json_row ].columns[ cC ].mobile_from_rows );
-				
-				for( cS = 0; cS < json_object[ json_row ].columns[ cC ].shortcodes.length; cS++){
-					if( typeof( otw_shortcode_component.shortcodes[ json_object[ json_row ].columns[ cC ].shortcodes[ cS ].shortcode_type ] ) != 'undefined' ){
-						this.rows[ row_id ].columns[ column_id ].add_shortcode( json_object[ json_row ].columns[ cC ].shortcodes[ cS ] );
+			if( typeof( json_object[ json_row ].columns ) == 'object' ){
+				for( cC = 0; cC < json_object[ json_row ].columns.length; cC++ ){
+					column_id = this.add_column( row_id, json_object[ json_row ].columns[ cC ].rows, json_object[ json_row ].columns[ cC ].from_rows, json_object[ json_row ].columns[ cC ].mobile_rows, json_object[ json_row ].columns[ cC ].mobile_from_rows );
+					
+					for( cS = 0; cS < json_object[ json_row ].columns[ cC ].shortcodes.length; cS++){
+						if( typeof( otw_shortcode_component.shortcodes[ json_object[ json_row ].columns[ cC ].shortcodes[ cS ].shortcode_type ] ) != 'undefined' ){
+							this.rows[ row_id ].columns[ column_id ].add_shortcode( json_object[ json_row ].columns[ cC ].shortcodes[ cS ] );
+						};
 					};
 				};
 			};
