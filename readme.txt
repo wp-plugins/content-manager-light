@@ -57,9 +57,9 @@ Some of the features:
 * Over 40+ ready to use shortcodes/content items. See full list on the Content Manager page.
 * Import shortcodes - import shortcodes from other plugins and your theme to make them available in the OTW Grid Manager
 * Custom shortcodes - create new custom shortcodes in a nice and easy to use interface. No coding!
-* Insert Shortcodes Anywhere – Layouts, Page Editor, Sidebars, Template files
-* Insert Sidebars Anywhere – Layouts, Page Editor, Template files
-* WordPress Widgets Anywhere – Layouts, Page Editor, Template files
+* Insert Shortcodes Anywhere - Layouts, Page Editor, Sidebars, Template files
+* Insert Sidebars Anywhere - Layouts, Page Editor, Template files
+* WordPress Widgets Anywhere - Layouts, Page Editor, Template files
 * Skins interface - build new skins withing your WordPress admin area.
 * Translation/Localization .po/.mo files ready to use
 * Support and free updates.
