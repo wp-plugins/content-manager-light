@@ -1,0 +1,9 @@
+.otw_cm_options label{
+	display: inline;
+}
+.otw_cm_options .otw_cm_left_labels label{
+	margin-right: 20px;
+}
+.otw-form-settings-field{
+	margin-top: 20px;
+}
