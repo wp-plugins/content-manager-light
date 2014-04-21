@@ -22,10 +22,14 @@ if( !function_exists( 'otw_lcm_init' ) ){
 		otw_lcm_enqueue_styles();
 		
 		//otw grid manager component
+		
+		include_once( plugin_dir_path( __FILE__ ).'otw_lcm_grid_meta_info.php' );
+		
 		$otw_lcm_grid_manager_component = otw_load_component( 'otw_grid_manager' );
 		$otw_lcm_grid_manager_object = otw_get_component( $otw_lcm_grid_manager_component );
 		$otw_lcm_grid_manager_object->active_for['page'] = true;
 		$otw_lcm_grid_manager_object->active_for['post'] = true;
+		$otw_lcm_grid_manager_object->meta_info = $otw_lcm_grid_meta_info;
 		
 		$otw_lcm_grid_manager_object->shortcode_preview_in_grid = false;
 		

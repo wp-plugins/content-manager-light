@@ -4,6 +4,8 @@ class OTW_Shortcode_Content_toggle extends OTW_Shortcodes{
 	public function __construct(){
 		
 		$this->has_custom_options = true;
+		
+		parent::__construct();
 	}
 	/**
 	 * register external libs
@@ -127,7 +129,7 @@ class OTW_Shortcode_Content_toggle extends OTW_Shortcodes{
 		
 		$html .= OTW_Form::text_input( array( 'id' => 'otw-shortcode-element-title', 'label' => $this->get_label( 'Title' ), 'description' => $this->get_label( 'Toggle title.' ), 'parse' => $source )  );
 		
-		$html .= OTW_Form::text_area( array( 'id' => 'otw-shortcode-element-content', 'label' => $this->get_label( 'Content' ), 'description' => $this->get_label( 'Toggle content.' ), 'parse' => $source )  );
+		$html .= OTW_Form::text_area( array( 'id' => 'otw-shortcode-element-content', 'label' => $this->get_label( 'Content' ), 'description' => $this->get_label( 'Toggle content. HTML is allowed.' ), 'parse' => $source )  );
 		
 		$html .= OTW_Form::select( array( 'id' => 'otw-shortcode-element-opened', 'label' => $this->get_label( 'Opened' ), 'description' => $this->get_label( 'Opened or closed on page load.' ), 'parse' => $source, 'options' => $this->settings['opened'], 'value' => $this->settings['default_opened'] ) );
 		
@@ -180,7 +182,7 @@ class OTW_Shortcode_Content_toggle extends OTW_Shortcodes{
 			
 			$code .= ']';
 			
-			$code .= strip_tags( $attributes['content'] );
+			$code .= $attributes['content'];
 			
 			$code .= '[/otw_shortcode_content_toggle]';
 		}

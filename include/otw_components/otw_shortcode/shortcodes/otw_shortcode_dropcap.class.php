@@ -4,6 +4,8 @@ class OTW_Shortcode_DropCap extends OTW_Shortcodes{
 	public function __construct(){
 		
 		$this->has_custom_options = true;
+		
+		parent::__construct();
 	}
 	
 	public function register_external_libs(){
@@ -134,7 +136,7 @@ class OTW_Shortcode_DropCap extends OTW_Shortcodes{
 		
 		$html .= OTW_Form::select( array( 'id' => 'otw-shortcode-element-square', 'label' => $this->get_label( 'Square' ), 'description' => $this->get_label( 'Enables square.' ), 'parse' => $source, 'options' => $this->settings['squares'], 'value' => $this->settings['default_square'] )  );
 		
-		$html .= OTW_Form::text_area( array( 'id' => 'otw-shortcode-element-content', 'label' => $this->get_label( 'Content' ), 'description' => $this->get_label( 'The content.' ), 'parse' => $source )  );
+		$html .= OTW_Form::text_area( array( 'id' => 'otw-shortcode-element-content', 'label' => $this->get_label( 'Content' ), 'description' => $this->get_label( 'The content. HTML is allowed.' ), 'parse' => $source )  );
 		
 		return $html;
 	}
@@ -192,7 +194,7 @@ class OTW_Shortcode_DropCap extends OTW_Shortcodes{
 			
 			$code .= ']';
 			
-			$code .= strip_tags( $attributes['content'] );
+			$code .= $attributes['content'];
 			
 			$code .= '[/otw_shortcode_dropcap]';
 		}

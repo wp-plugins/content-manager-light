@@ -4,6 +4,8 @@ class OTW_Shortcode_Info_Box extends OTW_Shortcodes{
 	public function __construct(){
 		
 		$this->has_custom_options = true;
+		
+		parent::__construct();
 	}
 	
 	
@@ -210,7 +212,7 @@ class OTW_Shortcode_Info_Box extends OTW_Shortcodes{
 			$source = $_POST['shortcode_object'];
 		}
 		
-		$html .= OTW_Form::text_area( array( 'id' => 'otw-shortcode-element-content', 'label' => $this->get_label( 'Content' ), 'description' => $this->get_label( 'The content of your info box.' ), 'parse' => $source )  );
+		$html .= OTW_Form::text_area( array( 'id' => 'otw-shortcode-element-content', 'label' => $this->get_label( 'Content' ), 'description' => $this->get_label( 'The content of your info box. HTML is allowed.' ), 'parse' => $source )  );
 		
 		$html .= OTW_Form::select( array( 'id' => 'otw-shortcode-element-border_type', 'label' => $this->get_label( 'Border type' ), 'description' => $this->get_label( 'Choose border type.' ), 'parse' => $source, 'options' => $this->settings['border_types'], 'value' => $this->settings['default_border_type'] )  );
 		
@@ -298,7 +300,7 @@ class OTW_Shortcode_Info_Box extends OTW_Shortcodes{
 			
 			$code .= ']';
 			
-			$code .= strip_tags( $attributes['content'] );
+			$code .= $attributes['content'];
 			
 			$code .= '[/otw_shortcode_info_box]';
 		}

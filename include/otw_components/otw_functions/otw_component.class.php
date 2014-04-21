@@ -48,6 +48,17 @@ class OTW_Component{
 	 */
 	public $external_libs = array();
 	
+	
+	/**
+	 * js version
+	 */
+	public $js_version = '1.13';
+	
+	/**
+	 * css version
+	 */
+	public $css_version = '1.13';
+	
 	/**
 	 *  Set settings
 	 */

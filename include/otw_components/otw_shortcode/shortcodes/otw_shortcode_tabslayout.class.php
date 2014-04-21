@@ -4,6 +4,8 @@ class OTW_Shortcode_TabsLayout extends OTW_Shortcodes{
 	public function __construct(){
 		
 		$this->has_custom_options = true;
+		
+		parent::__construct();
 	}
 	/**
 	 * register external libs
@@ -162,7 +164,7 @@ class OTW_Shortcode_TabsLayout extends OTW_Shortcodes{
 			
 			$html .= OTW_Form::uploader( array( 'id' => 'otw-shortcode-element-tab_'.$cT.'_icon_url', 'label' => $this->get_label( 'Tab '.$cT.' Icon URL' ), 'description' => $this->get_label( 'Url to a custom icon.' ), 'parse' => $source )  );
 			
-			$html .= OTW_Form::text_area( array( 'id' => 'otw-shortcode-element-tab_'.$cT.'_content', 'label' => $this->get_label( 'Tab '.$cT.' content' ), 'description' => $this->get_label( 'The content of the tab.' ), 'parse' => $source )  );
+			$html .= OTW_Form::text_area( array( 'id' => 'otw-shortcode-element-tab_'.$cT.'_content', 'label' => $this->get_label( 'Tab '.$cT.' content' ), 'description' => $this->get_label( 'The content of the tab. HTML is allowed.' ), 'parse' => $source )  );
 		}
 		
 		return $html;
@@ -286,7 +288,7 @@ class OTW_Shortcode_TabsLayout extends OTW_Shortcodes{
 			for( $cT = 1; $cT <= $tabs; $cT++ ){
 				
 				$html .= '<div id="tabs-'.$cT.'" class="ui-tabs-panel ui-widget-content ui-corner-bottom">';
-				$html .= '<p>'.$this->format_attribute( '', 'tab_'.$cT.'_content', $attributes, false, '' ).'</p>';
+				$html .= '<p>'.nl2br( otw_htmlentities_decode( $this->format_attribute( '', 'tab_'.$cT.'_content', $attributes, false, '' ) ) ).'</p>';
 				$html .= '</div>';
 			}
 		}

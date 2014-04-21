@@ -290,4 +290,16 @@ if (!function_exists( "otw_htmlentities" )){
 		return htmlentities( $string, ENT_COMPAT, 'UTF-8' );
 	}
 }
+
+/**
+ *  Html entities decocode
+ *  return @string
+ */
+if (!function_exists( "otw_htmlentities_decode" )){
+	function otw_htmlentities_decode( $string ){
+		
+		return html_entity_decode( $string, ENT_COMPAT, 'UTF-8' );
+	}
+}
+
 ?>

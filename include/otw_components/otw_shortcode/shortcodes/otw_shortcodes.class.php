@@ -352,6 +352,13 @@ class OTW_Shortcodes{
 	);
 	
 	/**
+	 * construct
+	 */
+	public function __construct(){
+		
+	}
+	
+	/**
 	 *  Get Label
 	 */
 	public function get_label( $label_key ){

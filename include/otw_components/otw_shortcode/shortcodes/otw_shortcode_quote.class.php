@@ -4,6 +4,8 @@ class OTW_Shortcode_Quote extends OTW_Shortcodes{
 	public function __construct(){
 		
 		$this->has_custom_options = true;
+		
+		parent::__construct();
 	}
 	
 	/**
@@ -88,7 +90,7 @@ class OTW_Shortcode_Quote extends OTW_Shortcodes{
 			$source = $_POST['shortcode_object'];
 		}
 		
-		$html .= OTW_Form::text_area( array( 'id' => 'otw-shortcode-element-content', 'label' => $this->get_label( 'Quote' ), 'description' => $this->get_label( 'The content of your quote.' ), 'parse' => $source )  );
+		$html .= OTW_Form::text_area( array( 'id' => 'otw-shortcode-element-content', 'label' => $this->get_label( 'Quote' ), 'description' => $this->get_label( 'The content of your quote. HTML is allowed.' ), 'parse' => $source )  );
 		
 		$html .= OTW_Form::select( array( 'id' => 'otw-shortcode-element-border', 'label' => $this->get_label( 'Border' ), 'description' => $this->get_label( 'Enables border.' ), 'parse' => $source, 'options' => $this->settings['borders'], 'value' => $this->settings['default_border'] )  );
 		
@@ -155,7 +157,7 @@ class OTW_Shortcode_Quote extends OTW_Shortcodes{
 			
 			$code .= ']';
 			
-			$code .= strip_tags( $attributes['content'] );
+			$code .= $attributes['content'];
 			
 			$code .= '[/otw_shortcode_quote]';
 		}
