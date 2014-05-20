@@ -160,9 +160,9 @@ if( !function_exists( 'otw_lcm_skins' ) ){
 /**
  * Check if Skins directory is writable
  */
-if( !function_exists( 'otw_lcm_skins_wirable' ) ){
+if( !function_exists( 'otw_lcm_skins_writable' ) ){
 	
-	function otw_lcm_skins_wirable( $skins_path ){
+	function otw_lcm_skins_writable( $skins_path ){
 		
 		return is_writable( $skins_path );
 	}

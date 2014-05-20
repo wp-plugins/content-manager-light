@@ -139,3 +139,20 @@
 	text-align: center;
 	padding-top: 20px;
 }
+.otw-html-area-holder{
+	height: 260px;
+	clear: both;
+}
+.otw-tmce-form-control{
+	width: 500px;
+	height: 80px;
+	display: none;
+}
+.otw-tmce-form-control .wp-editor-area{
+	border: 1px solid #DDDDDD;
+	border-top: none;
+	max-height: 120px;
+}
+.otw-clear{
+	clear: both;
+}

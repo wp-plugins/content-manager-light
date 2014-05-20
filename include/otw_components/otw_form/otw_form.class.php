@@ -131,6 +131,33 @@ class OTW_Form extends OTW_Component{
 		
 		switch( $attributes['format'] ){
 		
+			case 'tmce_holder':
+					$html .= "<textarea ".self::format_attributes( array('id','name','class'), array(), $attributes )." ".$attributes['extra']." data-type=\"tmce\" style=\"display: none;\" >".otw_stripslashes( $attributes['value'] )."</textarea>";
+					$html .= '<div id="'.$attributes['id'].'-holder" class="otw-html-area-holder"></div>';
+				break;
+			case 'tmce':
+					$html .= "<div class=\"otw-tmce-form-control\" id=\"".$attributes['id']."-form-control\" style=\"display: none;\">";
+					$html .= "<input type=\"hidden\" class=\"otw-html-area\" value=\"".$attributes['id']."\" />";
+					
+					if( $attributes['label'] || $attributes['show_empty_label'] ){
+						$html .= "<label".self::format_attribute( 'for', 'id', $attributes ).">".$attributes['label']."</label>";
+					}
+					$settings = array();
+					$settings['media_buttons'] = false;
+					$settings['teeny'] = true;
+					
+					ob_start();
+					wp_editor( otw_stripslashes( $attributes['value'] ), $attributes['id'], $settings );
+					
+					$html .= '<div>'.ob_get_contents().'</div>';
+					ob_end_clean();
+					
+					if( $attributes['description'] ){
+							$html .= "<span class=\"otw-form-hint\">".$attributes['description']."</span>";
+					}
+					$html .= "</div>";
+
+				break;
 			default:
 					//$attributes['id'] = str_replace( '-', '', $attributes['id'] );
 					$html .= "<div class=\"otw-form-control\">";

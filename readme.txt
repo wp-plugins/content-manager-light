@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: manage content, custom page layout, grid, columns, widgets, button, info boxes, dropcaps, quotes, unordered lists, ordered lists, tabs, toggles, dividers, horizontal rule, HTML editor
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,11 @@ Please refer to [online documentation page](http://otwthemes.com/online-document
 9. Dividers
 
 == Changelog ==
+
+= 1.3 =
+
+* Fixed: Popup buttons css fixes
+* Fixed: HTML Editor item now works with the new WordPress 3.9 editor
 
 = 1.2 =
 

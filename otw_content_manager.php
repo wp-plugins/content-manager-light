@@ -4,7 +4,7 @@ Plugin Name: Content Manager Light
 Plugin URI: http://OTWthemes.com
 Description:  Build your custom page layout and fill it with ready to use widets/content. Easy, no coding. 
 Author: OTWthemes.com
-Version: 1.2
+Version: 1.3
 
 Author URI: http://themeforest.net/user/OTWthemes
 */
@@ -31,7 +31,7 @@ $otw_lcm_skins = array(
 );
 
 $otw_lcm_plugin_url = plugins_url( substr( dirname( __FILE__ ), strlen( dirname( dirname( __FILE__ ) ) ) ) );
-$otw_lcm_css_version = '1.0';
+$otw_lcm_css_version = '1.1';
 
 $otw_lcm_plugin_options = get_option( 'otw_cm_plugin_options' );
 
