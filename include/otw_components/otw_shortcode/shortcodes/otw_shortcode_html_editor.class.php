@@ -1,6 +1,8 @@
 <?php
 class OTW_Shortcode_Html_Editor extends OTW_Shortcodes{
 	
+	public static $inited = false;
+	
 	public function __construct(){
 		
 		$this->has_custom_options = true;
@@ -29,11 +31,15 @@ class OTW_Shortcode_Html_Editor extends OTW_Shortcodes{
 	
 	
 	public function otw_shortcode_html_area_editor(){
-	
-		if( is_admin() ){
-			echo OTW_Form::html_area( array( 'id' => 'otw-shortcode-element-content_tmce', 'label' => 'Content', 'format' => 'tmce' )  );
-		}elseif( $this->init_in_front && otw_is_grid_manager_content() ){
-			echo OTW_Form::html_area( array( 'id' => 'otw-shortcode-element-content_tmce', 'label' => 'Content', 'format' => 'tmce' )  );
+		
+		if( !self::$inited ){
+			
+			if( is_admin() ){
+				echo OTW_Form::html_area( array( 'id' => 'otw-shortcode-element-content_tmce', 'label' => 'Content', 'format' => 'tmce' )  );
+			}elseif( $this->init_in_front && otw_is_grid_manager_content() ){
+				echo OTW_Form::html_area( array( 'id' => 'otw-shortcode-element-content_tmce', 'label' => 'Content', 'format' => 'tmce' )  );
+			}
+			self::$inited = true;
 		}
 	}
 	

@@ -1,6 +1,10 @@
 <?php
 class OTW_Form extends OTW_Component{
 	
+	/**
+	 * Init in front
+	 */
+	public $init_in_front = false;
 	
 	/**
 	 *  Init 
@@ -8,11 +12,19 @@ class OTW_Form extends OTW_Component{
 	public function init(){
 		
 		if( is_admin() ){
-			wp_enqueue_script('otw_form_colorpicker_admin', $this->component_url.'js/colorpicker.js' , array( 'jquery' ), '1.1' );
-			wp_enqueue_script('otw_form_admin', $this->component_url.'js/otw_form_admin.js' , array( 'jquery' ), '1.1' );
+			wp_enqueue_script('otw_form_colorpicker_admin', $this->component_url.'js/colorpicker.js' , array( 'jquery' ), $this->js_version );
+			wp_enqueue_script('otw_form_admin', $this->component_url.'js/otw_form_admin.js' , array( 'jquery' ), $this->js_version );
 			
-			wp_enqueue_style( 'otw_form_colorpicker_admin', $this->component_url.'css/colorpicker.css', array( ), '1.1' );
-			wp_enqueue_style( 'otw_form_admin', $this->component_url.'css/otw_form_admin.css', array( ), '1.1' );
+			wp_enqueue_style( 'otw_form_colorpicker_admin', $this->component_url.'css/colorpicker.css', array( ), $this->css_version );
+			wp_enqueue_style( 'otw_form_admin', $this->component_url.'css/otw_form_admin.css', array( ), $this->css_version );
+			
+		}elseif( $this->init_in_front ){
+			
+			wp_enqueue_script('otw_form_colorpicker', $this->component_url.'js/colorpicker.js' , array( 'jquery' ), $this->js_version );
+			wp_enqueue_script('otw_form', $this->component_url.'js/otw_form_admin.js' , array( 'jquery' ), $this->js_version );
+			
+			wp_enqueue_style( 'otw_form_colorpicker', $this->component_url.'css/colorpicker.css', array( ), $this->css_version );
+			wp_enqueue_style( 'otw_form', $this->component_url.'css/otw_form_admin.css', array( ), $this->css_version );
 		}
 		
 		parent::init();
@@ -38,7 +50,7 @@ class OTW_Form extends OTW_Component{
 		
 			default:
 					$html .= "<div class=\"otw-form-control\">";
-					if( $attributes['label'] ){
+					if( $attributes['label'] || $attributes['show_empty_label'] ){
 						$html .= "<label".self::format_attribute( 'for', 'id', $attributes ).">".$attributes['label']."</label>";
 					}
 					
@@ -97,7 +109,7 @@ class OTW_Form extends OTW_Component{
 		
 			default:
 					$html .= "<div class=\"otw-form-control\">";
-					if( $attributes['label'] ){
+					if( $attributes['label'] || $attributes['show_empty_label'] ){
 						$html .= "<label".self::format_attribute( 'for', 'id', $attributes ).">".$attributes['label']."</label>";
 					}
 					$html .= "<textarea ".self::format_attributes( array('id','name','class','style'), array(), $attributes )." ".$attributes['extra'].">".otw_stripslashes( $attributes['value'] )."</textarea>";
@@ -159,23 +171,20 @@ class OTW_Form extends OTW_Component{
 
 				break;
 			default:
-					//$attributes['id'] = str_replace( '-', '', $attributes['id'] );
-					$html .= "<div class=\"otw-form-control\">";
+					$html .= "<div class=\"otw-form-control\" id=\"".$attributes['id']."-form-control\">";
 					$html .= "<input type=\"hidden\" class=\"otw-html-area\" value=\"".$attributes['id']."\" />";
-					if( $attributes['label'] ){
+					
+					if( $attributes['label'] || $attributes['show_empty_label'] ){
 						$html .= "<label".self::format_attribute( 'for', 'id', $attributes ).">".$attributes['label']."</label>";
 					}
 					$settings = array();
 					$settings['media_buttons'] = false;
-					//$settings['tinymce'] = array('theme_advanced_buttons9' => 'bold, italic, ul, min_size, max_size');
-					//$settings['textarea_rows'] = '30';
-					//$settings['quicktags'] = true;
 					
 					ob_start();
 					wp_editor( otw_stripslashes( $attributes['value'] ), $attributes['id'], $settings );
-					$html .= ob_get_contents();
+					
+					$html .= '<div>'.ob_get_contents().'</div>';
 					ob_end_clean();
-					//$html .= "<textarea ".self::format_attributes( array('id','name','class','style'), array(), $attributes )." ".$attributes['extra'].">".otw_stripslashes( $attributes['value'] )."</textarea>";
 					
 					if( $attributes['description'] ){
 							$html .= "<span class=\"otw-form-hint\">".$attributes['description']."</span>";
@@ -207,7 +216,7 @@ class OTW_Form extends OTW_Component{
 		
 			default:
 					$html .= "<div class=\"otw-form-control\">";
-					if( $attributes['label'] ){
+					if( $attributes['label'] || $attributes['show_empty_label'] ){
 						$html .= "<label".self::format_attribute( 'for', 'id', $attributes ).">".$attributes['label']."</label>";
 					}
 					$html .= "<input type=\"text\"".self::format_attributes( array('id','name','value','class','style'), array(), $attributes, array(), 'text_input' )." ".$attributes['extra'].">";
@@ -248,7 +257,7 @@ class OTW_Form extends OTW_Component{
 					
 					$html .= "<input type=\"checkbox\"".self::format_attributes( array('id','name','value','class','style','checked'), array(), $attributes, array(), 'checkbox' )." ".$attributes['extra'].">";
 					
-					if( $attributes['label'] ){
+					if( $attributes['label'] || $attributes['show_empty_label'] ){
 						$html .= "<label".self::format_attribute( 'for', 'id', $attributes ).">".$attributes['label']."</label>";
 					}
 					if( $attributes['description'] ){
@@ -269,7 +278,7 @@ class OTW_Form extends OTW_Component{
 	 */
 	public static function uploader( $attributes = array() ){
 	
-		if( get_bloginfo('version') <= '3.4.1' ){
+		if( otw_comprare_blog_version( '3.4.1' ) >= 0 ){
 			
 			if( isset( $attributes['alternative_description'] ) ){
 				$attributes['description'] = $attributes['alternative_description'];
@@ -290,7 +299,7 @@ class OTW_Form extends OTW_Component{
 			default:
 					$html .= "<div class=\"otw-form-control\">";
 					
-					if( $attributes['label'] ){
+					if( $attributes['label'] || $attributes['show_empty_label'] ){
 						$html .= "<label".self::format_attribute( 'for', 'id', $attributes ).">".$attributes['label']."</label>";
 					}
 					$html .= '<div class="wp-media-buttons" ><a title="'.$attributes['label'].'" data-editor="'.$attributes['id'].'" class="button otw-form-uploader-control insert-media add_media" href="#"><span class="wp-media-buttons-icon"></span></a>';
@@ -300,12 +309,6 @@ class OTW_Form extends OTW_Component{
 					if( $attributes['description'] ){
 						$html .= "<span class=\"otw-form-hint\">".$attributes['description']."</span>";
 					}
-					
-					//if( isset( $attributes['preview_label'] ) && $attributes['preview_label'] ){
-					//	$html .= "<span class=\"otw-form-hint\">".$attributes['preview_label']."</span>";
-					//}
-					//$html .= "<div id=\"".$attributes['id']."-preview\" class=\"otw-form-uploader-preview\">";
-					//$html .= "</div>";
 					$html .= "</div>";
 				break;
 		}
@@ -341,7 +344,7 @@ class OTW_Form extends OTW_Component{
 		
 			default:
 					$html .= "<div class=\"otw-form-control\">";
-					if( $attributes['label'] ){
+					if( $attributes['label'] || $attributes['show_empty_label'] ){
 						$html .= "<label".self::format_attribute( 'for', 'id', $attributes ).">".$attributes['label']."</label>";
 					}
 					
@@ -381,6 +384,9 @@ class OTW_Form extends OTW_Component{
 		}
 		if( !isset( $attributes['name'] ) ){
 			$attributes['name'] = '';
+		}
+		if( !isset( $attributes['show_empty_label'] ) ){
+			$attributes['show_empty_label'] = false;
 		}
 		if( !isset( $attributes['class'] ) ){
 			switch( $type ){
