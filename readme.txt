@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: manage content, custom page layout, grid, columns, widgets, button, info boxes, dropcaps, quotes, unordered lists, ordered lists, tabs, toggles, dividers, horizontal rule, HTML editor
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,10 @@ Please refer to [online documentation page](http://otwthemes.com/online-document
 9. Dividers
 
 == Changelog ==
+
+= 1.5 =
+
+* Fixed: wp link wrap zindex added
 
 = 1.4 =
 
