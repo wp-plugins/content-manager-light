@@ -302,4 +302,30 @@ if (!function_exists( "otw_htmlentities_decode" )){
 	}
 }
 
+/**
+ *  Compare the current version with given one
+ *  return integer
+ */
+if (!function_exists( "otw_comprare_blog_version" )){
+	function otw_comprare_blog_version( $version ){
+	
+		$blog_version = get_bloginfo('version');
+		
+		$blog_version_parts = explode( '.', $blog_version );
+		$version_parts = explode( '.', $version );
+		
+		foreach( $blog_version_parts as $part_key => $part_value )
+		{
+			if( $part_value > $version_parts[ $part_key ] )
+			{
+				return -1;
+			}
+			elseif( $part_value < $version_parts[ $part_key ] )
+			{
+				return 1;
+			}
+		}
+		return 0;
+	}
+}
 ?>
