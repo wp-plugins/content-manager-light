@@ -18,7 +18,7 @@ Build custom page layouts. Create as many rows and columns as you need.
 
 **Content Items**
 
-Insert any of the ready to use content items to fill in content in your columns. All settings are done in a nice and easy interface. Here is the list of content items
+Insert any of the ready to use content items to fill in content in your columns. All settings are done in a nice and easy interface. Here is the list of content items:
 
 * Button
 * Info boxes
@@ -30,7 +30,6 @@ Insert any of the ready to use content items to fill in content in your columns.
 * Toggles
 * Dividers (Horizontal rules)
 * HTML editor
-
 
 **Demo site and Online documentation**
 
@@ -50,7 +49,7 @@ This plugin comes Localization/Internationalization ready. It is following WordP
 Upgrade to the full version of [Content Manager](http://otwthemes.com/product/content-manager-for-wordpress/?utm_source=wp.org&utm_medium=page&utm_content=upgrade&utm_campaign=cml) |
 [Demo site](http://otwthemes.com/demos/1ts/?item=Content%20Manager&utm_source=wp.org&utm_medium=page&utm_content=upgrade&utm_campaign=cml) 
 
-Some of the features:
+Some of the features
 
 * OTW Grid Manager full version - responsive grid, drag & drop enabled, easier and faster way to insert rows with columns, edit for rows, columns and shortcodes/content items, live preview in the grid.
 * Front-end editor - edit your layouts in the front-end of your site. It is a lot quicker and easier.
