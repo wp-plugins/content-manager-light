@@ -18,7 +18,7 @@ Build custom page layouts. Create as many rows and columns as you need.
 
 **Content Items**
 
-Insert any of the ready to use content items to fill in content in your columns. All settings are done in a nice and easy interface. Here is the list of content items:
+Insert any of the ready to use content items to fill in content in your columns. All settings are done in a nice and easy interface. Here is the list of content items
 
 * Button
 * Info boxes
@@ -30,6 +30,7 @@ Insert any of the ready to use content items to fill in content in your columns.
 * Toggles
 * Dividers (Horizontal rules)
 * HTML editor
+
 
 **Demo site and Online documentation**
 
