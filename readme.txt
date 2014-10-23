@@ -3,7 +3,7 @@ Contributors: OTWthemes
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CQH6CMTR42KS2
 Tags: manage content, custom page layout, grid, columns, widgets, button, info boxes, dropcaps, quotes, unordered lists, ordered lists, tabs, toggles, dividers, horizontal rule, HTML editor
 Requires at least: 3.6
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: 1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
