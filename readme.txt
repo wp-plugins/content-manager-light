@@ -18,7 +18,7 @@ Build custom page layouts. Create as many rows and columns as you need.
 
 **Content Items**
 
-Insert any of the ready to use content items to fill in content in your columns. All settings are done in a nice and easy interface. Here is the list of content items:
+Insert any of the ready to use content items to fill in content in your columns. All settings are easily done in a nice and intuitive interface. Here is the list of content items:
 
 * Button
 * Info boxes
@@ -35,10 +35,9 @@ Insert any of the ready to use content items to fill in content in your columns.
 
 See [Demo site](http://otwthemes.com/demos/1ts/?item=Content%20Manager%20Light&utm_source=wp.org&utm_medium=page&utm_content=demo&utm_campaign=cml) and [Online documentation](http://otwthemes.com/online-documentation-content-manager-light-wordpress-plugin/?utm_source=wp.org&utm_medium=page&utm_content=docs&utm_campaign=cml) for more info on this plugin.
 
-
 **Custom styling and skins**
 
-Most of the styles for the content items will be inherited from your theme. Some will come with the plugin. If you want to style a content item any way different you can either use the ready css classes or place your own for each content item individually (in content items' settings screen). You can also create a custom skin in a separate file and make the plugin load it form the plugin options page.
+Most of the styles for the content items will be inherited from your theme, but some will come with the plugin. If you want to style a content item any way different you can either use the ready css classes or place your own for each content item individually (in content items' settings screen). You can also create a custom skin in a separate file and make the plugin load it form the plugin options page.
 
 **Localization/Internationalization**
 
