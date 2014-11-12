@@ -53,8 +53,8 @@ Some of the features:
 
 * OTW Grid Manager full version - responsive grid, drag & drop enabled, easier and faster way to insert rows with columns, edit for rows, columns and shortcodes/content items, live preview in the grid.
 * Front-end editor - edit your layouts in the front-end of your site. It is a lot quicker and easier.
-* OTW Content Sidebars - Add sidebars on the left and/or right of your pages/layouts.
-* Over 40+ ready to use shortcodes/content items. See full list on the Content Manager page.
+* OTW Content Sidebars - Add sidebars on the left and/or right of your pages/layouts
+* Over 50 + ready to use shortcodes/content items. See full list on the Content Manager page
 * Import shortcodes - import shortcodes from other plugins and your theme to make them available in the OTW Grid Manager
 * Custom shortcodes - create new custom shortcodes in a nice and easy to use interface. No coding!
 * Insert Shortcodes Anywhere - Layouts, Page Editor, Sidebars, Template files
