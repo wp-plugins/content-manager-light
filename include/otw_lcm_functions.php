@@ -54,11 +54,11 @@ if( !function_exists( 'otw_lcm_init' ) ){
 			$otw_lcm_shortcode_object->editor_button_active_for['post'] = true;
 		}
 		
+		$otw_lcm_shortcode_object->add_default_external_lib( 'css', 'style', get_stylesheet_directory_uri().'/style.css', 'live_preview', 10 );
+		
 		if( $otw_lcm_skin ){
 			$otw_lcm_shortcode_object->add_default_external_lib( 'css', 'otw_content_manager', $otw_lcm_plugin_url.'/skins/'.$otw_lcm_skin.'.css', 'live_preview', 200 );
 		}
-		$otw_lcm_shortcode_object->add_default_external_lib( 'css', 'style', get_stylesheet_directory_uri().'/style.css', 'live_preview', 10 );
-		
 		
 		$otw_lcm_shortcode_object->shortcodes['button'] = array( 'title' => __('Button', 'otw_lcm'),'enabled' => true,'children' => false, 'parent' => false, 'order' => 0,'path' => dirname( __FILE__ ).'/otw_components/otw_shortcode/', 'url' => $otw_lcm_plugin_url.'/include/otw_components/otw_shortcode/' );
 		$otw_lcm_shortcode_object->shortcodes['info_box'] = array( 'title' => __('Info Box', 'otw_lcm'),'enabled' => true,'children' => false, 'parent' => false, 'order' => 2,'path' => dirname( __FILE__ ).'/otw_components/otw_shortcode/', 'url' => $otw_lcm_plugin_url.'/include/otw_components/otw_shortcode/' );
