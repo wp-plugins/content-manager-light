@@ -45,7 +45,7 @@ This plugin comes Localization/Internationalization ready. It is following WordP
 
 **Full version of the plugin**
 
-Upgrade to the full version of [Content Manager](http://otwthemes.com/product/content-manager-for-wordpress/?utm_source=wp.org&utm_medium=page&utm_content=upgrade&utm_campaign=cml) |
+Upgrade to the full version of [Content Manager](http://codecanyon.net/item/content-manager-for-wordpress/7431829?ref=OTWthemes) |
 [Demo site](http://otwthemes.com/demos/1ts/?item=Content%20Manager&utm_source=wp.org&utm_medium=page&utm_content=upgrade&utm_campaign=cml) 
 
 Some of the features:
